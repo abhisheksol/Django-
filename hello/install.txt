@@ -1,0 +1,72 @@
+ .) pip install django --upgrade
+
+
+ .) django-admin startproject hello
+
+
+
+ .) python manage.py runserver
+
+
+ .) python manage.py  startapp pizza
+
+
+ .)make new url.py in the pizza app
+
+
+ .) step1 :in url.py of parent ==>
+
+
+from django.contrib import admin
+from django.urls import path, include
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', include('pizza.urls')),
+]
+
+
+.) step 2: child url.py ===>
+   
+   
+from django.contrib import admin
+from django.urls import path
+from pizza import views
+urlpatterns = [
+    path('', views.index, name='home'),
+]
+
+
+.) step 3 in Views.py 
+
+
+  from django.shortcuts import render, HttpResponse as httpResponse
+
+# Create your views here.
+def index(request):
+    return httpResponse("Hello, world. You're at the polls index.")
+
+step 4 : make templates name folder 
+and in setting templates add this in dir :'DIRS': [os.path.join(BASE_DIR, 'templates')],
+
+
+step 5: 
+in that make index html and render 
+
+  def index(request):
+    # return httpResponse("Hello, world. You're at the polls index.")
+    context={
+        "variable": "hello abhishek"
+    }
+    return render(request, 'index.html', context)
+
+
+
+
+
+
+
+
+
+
+
