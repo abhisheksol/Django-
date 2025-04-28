@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="G:\all major project\New folder\Django pratice\serialization\venv"
+VIRTUAL_ENV="G:\all major project\New folder\Django pratice\Mobile product\venv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

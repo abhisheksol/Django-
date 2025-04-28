@@ -39,10 +39,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'serlization',
     'rest_framework',
+    
     'corsheaders',
     'rest_framework.authtoken',
+     'channels',
+     'chat',  # Add your chat app here
     
 ]
+ASGI_APPLICATION = 'main.asgi.application'
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # Add this line
@@ -111,6 +115,10 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+
+
+
+
 CORS_ALLOW_ALL_ORIGINS = True
 
 # Internationalization
@@ -134,3 +142,9 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CHANNEL_LAYERS = {
+    'default': {
+        'BACKEND': 'channels.layers.InMemoryChannelLayer'
+    }
+}

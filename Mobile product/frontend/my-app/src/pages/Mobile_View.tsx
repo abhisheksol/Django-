@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+import ChatRoom from './Chat';
 
 // Type for mobile data
 type Mobile = {
@@ -177,9 +178,9 @@ const Mobile_View = () => {
                     {mobiles.map((mobile, idx) => (
                         <div key={mobile.id} className="mobile-card">
                             <div className="mobile-image-container">
-                                <img 
+                                <img
                                     src={imageErrors[mobile.id] ? fallbackImage : (mobile.image_url || fallbackImage)}
-                                    alt={mobile.name} 
+                                    alt={mobile.name}
                                     onError={() => handleImageError(mobile.id)}
                                 />
                             </div>
@@ -197,6 +198,8 @@ const Mobile_View = () => {
                     ))}
                 </div>
             )}
+
+            <ChatRoom roomName="room1" />
         </div>
     );
 };

@@ -9,6 +9,7 @@ import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthProvider } from './context/AuthContext';
 import Profile from './pages/User/Profile';
+import ChatRoom from './pages/Chat';
 
 export default function App() {
   return (
@@ -22,6 +23,7 @@ export default function App() {
             <Route path="/register" element={<Registration />} />
             <Route path="/login" element={<Login />} />
             <Route path="/profile" element={<Profile />} />
+            
           </Routes>
           <ToastContainer position="top-right" autoClose={3000} />
         </div>
